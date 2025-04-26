@@ -12,5 +12,10 @@ namespace SubscriptionService.Services.Implementations
         {
             _userRepository = userRepository;
         }
+
+        public async Task<IEnumerable<Channel>> GetSubscribedChannelsAsync(string userId)
+        {
+            return await _userRepository.GetSubscribedChannelsAsync(userId);
+        }
     }
 }
