@@ -1,6 +1,6 @@
-﻿using NotificationService.Contracts;
+﻿using NotificationSystem.Contracts;
 
-namespace NotificationService.Services.Abstractions
+namespace NotificationSystem.Services.Abstractions
 {
     public interface IEventHandler
     {

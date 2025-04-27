@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NotificationService.Dto;
-using NotificationService.Models;
-using NotificationService.Services.Abstractions;
+using NotificationSystem.Dto;
+using NotificationSystem.Models;
+using NotificationSystem.Services.Abstractions;
 
-namespace NotificationService.Controllers
+namespace NotificationSystem.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

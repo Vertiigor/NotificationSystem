@@ -1,16 +1,16 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using NotificationService.Data;
-using NotificationService.Data.RabbitMQ.Connection;
-using NotificationService.Models;
-using NotificationService.Repository.Abstractions;
-using NotificationService.Repository.Implementations;
-using NotificationService.Services;
-using NotificationService.Services.Abstractions;
-using NotificationService.Services.EventHandlers;
-using NotificationService.Services.Implementations;
+using NotificationSystem.Data;
+using NotificationSystem.Data.RabbitMQ.Connection;
+using NotificationSystem.Models;
+using NotificationSystem.Repository.Abstractions;
+using NotificationSystem.Repository.Implementations;
+using NotificationSystem.Services;
+using NotificationSystem.Services.Abstractions;
+using NotificationSystem.Services.EventHandlers;
+using NotificationSystem.Services.Implementations;
 
-namespace NotificationService;
+namespace NotificationSystem;
 
 public class Program
 {

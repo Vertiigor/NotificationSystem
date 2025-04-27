@@ -1,14 +1,14 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using NotificationService.Data;
-using NotificationService.Extensions;
-using NotificationService.Models;
-using NotificationService.Repository.Abstractions;
-using NotificationService.Repository.Implementations;
-using NotificationService.Services.Abstractions;
-using NotificationService.Services.Implementations;
+using NotificationSystem.Data;
+using NotificationSystem.Extensions;
+using NotificationSystem.Models;
+using NotificationSystem.Repository.Abstractions;
+using NotificationSystem.Repository.Implementations;
+using NotificationSystem.Services.Abstractions;
+using NotificationSystem.Services.Implementations;
 
-namespace NotificationService;
+namespace NotificationSystem;
 
 public class Program
 {

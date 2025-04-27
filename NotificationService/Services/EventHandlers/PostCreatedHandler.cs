@@ -1,7 +1,7 @@
-﻿using NotificationService.Contracts;
-using NotificationService.Services.Abstractions;
+﻿using NotificationSystem.Contracts;
+using NotificationSystem.Services.Abstractions;
 
-namespace NotificationService.Services.EventHandlers
+namespace NotificationSystem.Services.EventHandlers
 {
     public class PostCreatedHandler : IEventHandler
     {

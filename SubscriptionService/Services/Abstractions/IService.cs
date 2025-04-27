@@ -1,4 +1,4 @@
-﻿namespace NotificationService.Services.Abstractions
+﻿namespace NotificationSystem.Services.Abstractions
 {
     public interface IService<T> where T : class
     {

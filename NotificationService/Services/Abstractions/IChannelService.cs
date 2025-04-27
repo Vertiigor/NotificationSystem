@@ -1,6 +1,6 @@
-﻿using NotificationService.Models;
+﻿using NotificationSystem.Models;
 
-namespace NotificationService.Services.Abstractions
+namespace NotificationSystem.Services.Abstractions
 {
     public interface IChannelService : IService<Channel>
     {

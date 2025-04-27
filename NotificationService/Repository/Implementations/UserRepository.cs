@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NotificationService.Data;
-using NotificationService.Models;
-using NotificationService.Repository.Abstractions;
+using NotificationSystem.Data;
+using NotificationSystem.Models;
+using NotificationSystem.Repository.Abstractions;
 
-namespace NotificationService.Repository.Implementations
+namespace NotificationSystem.Repository.Implementations
 {
     public class UserRepository : Repository<User>, IUserRepository
     {

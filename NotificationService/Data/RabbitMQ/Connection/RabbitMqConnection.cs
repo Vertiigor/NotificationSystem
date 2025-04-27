@@ -1,6 +1,6 @@
 ﻿using RabbitMQ.Client;
 
-namespace NotificationService.Data.RabbitMQ.Connection
+namespace NotificationSystem.Data.RabbitMQ.Connection
 {
     public class RabbitMqConnection : IRabbitMqConnection, IDisposable
     {

@@ -1,4 +1,4 @@
-﻿namespace NotificationService.Contracts
+﻿namespace NotificationSystem.Contracts
 {
     public class PostCreatedEvent
     {

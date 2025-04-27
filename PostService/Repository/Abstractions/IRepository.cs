@@ -1,4 +1,4 @@
-﻿namespace NotificationService.Repository.Abstractions
+﻿namespace NotificationSystem.Repository.Abstractions
 {
     public interface IRepository<T> where T : class
     {

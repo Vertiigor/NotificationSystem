@@ -1,8 +1,8 @@
-﻿using NotificationService.Contracts;
-using NotificationService.Services.Abstractions;
-using NotificationService.Services.EventHandlers;
+﻿using NotificationSystem.Contracts;
+using NotificationSystem.Services.Abstractions;
+using NotificationSystem.Services.EventHandlers;
 
-namespace NotificationService.Services
+namespace NotificationSystem.Services
 {
     public class EventRouter
     {

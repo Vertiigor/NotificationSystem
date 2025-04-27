@@ -1,6 +1,6 @@
-﻿using NotificationService.Repository.Abstractions;
+﻿using NotificationSystem.Repository.Abstractions;
 
-namespace NotificationService.Services.Abstractions
+namespace NotificationSystem.Services.Abstractions
 {
     public abstract class Service<T> : IService<T> where T : class
     {

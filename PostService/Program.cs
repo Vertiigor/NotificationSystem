@@ -1,14 +1,14 @@
 using Microsoft.EntityFrameworkCore;
-using NotificationService.Data;
-using NotificationService.Data.RabbitMQ.Connection;
-using NotificationService.Extensions;
-using NotificationService.Producers.Abstractions;
-using NotificationService.Producers.Implementations;
-using NotificationService.Repository.Abstractions;
-using NotificationService.Repository.Implementations;
-using NotificationService.Services.Abstractions;
+using NotificationSystem.Data;
+using NotificationSystem.Data.RabbitMQ.Connection;
+using NotificationSystem.Extensions;
+using NotificationSystem.Producers.Abstractions;
+using NotificationSystem.Producers.Implementations;
+using NotificationSystem.Repository.Abstractions;
+using NotificationSystem.Repository.Implementations;
+using NotificationSystem.Services.Abstractions;
 
-namespace NotificationService;
+namespace NotificationSystem;
 
 public class Program
 {
@@ -26,7 +26,7 @@ public class Program
         builder.Services.AddScoped<IPostRepository, PostRepository>();
 
         // Register services
-        builder.Services.AddScoped<IPostService, NotificationService.Services.Implementations.PostService>();
+        builder.Services.AddScoped<IPostService, NotificationSystem.Services.Implementations.PostService>();
 
         // Register RabbitMQ connection
         builder.Services.AddSingleton<IRabbitMqConnection, RabbitMqConnection>();

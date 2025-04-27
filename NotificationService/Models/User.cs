@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace NotificationService.Models
+namespace NotificationSystem.Models
 {
     public class User : IdentityUser
     {

@@ -1,6 +1,6 @@
-﻿using NotificationService.Models;
+﻿using NotificationSystem.Models;
 
-namespace NotificationService.Repository.Abstractions
+namespace NotificationSystem.Repository.Abstractions
 {
     public interface IUserRepository : IRepository<User>
     {

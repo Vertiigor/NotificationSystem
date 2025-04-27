@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace NotificationService.Migrations
+namespace NotificationSystem.Migrations
 {
     /// <inheritdoc />
     public partial class PostServiceInit : Migration

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace NotificationService.Contracts
+namespace NotificationSystem.Contracts
 {
     public class MessageEnvelope
     {

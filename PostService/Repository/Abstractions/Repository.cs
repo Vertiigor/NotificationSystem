@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NotificationService.Data;
+using NotificationSystem.Data;
 
-namespace NotificationService.Repository.Abstractions
+namespace NotificationSystem.Repository.Abstractions
 {
     public abstract class Repository<T> : IRepository<T> where T : class
     {

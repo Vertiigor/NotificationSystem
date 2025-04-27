@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NotificationService.Data;
+using NotificationSystem.Data;
 
-namespace NotificationService.Extensions
+namespace NotificationSystem.Extensions
 {
     public static class WebApplicationBuilderExtensions
     {

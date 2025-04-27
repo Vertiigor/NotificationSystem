@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace NotificationService.Migrations
+namespace NotificationSystem.Migrations
 {
     /// <inheritdoc />
     public partial class SubscriptionServiceInit : Migration

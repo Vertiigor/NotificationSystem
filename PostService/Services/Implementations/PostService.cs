@@ -1,9 +1,9 @@
-﻿using NotificationService.Models;
-using NotificationService.Producers.Abstractions;
-using NotificationService.Repository.Abstractions;
-using NotificationService.Services.Abstractions;
+﻿using NotificationSystem.Models;
+using NotificationSystem.Producers.Abstractions;
+using NotificationSystem.Repository.Abstractions;
+using NotificationSystem.Services.Abstractions;
 
-namespace NotificationService.Services.Implementations
+namespace NotificationSystem.Services.Implementations
 {
     public class PostService : Service<Post>, IPostService
     {

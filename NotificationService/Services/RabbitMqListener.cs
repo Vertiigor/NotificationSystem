@@ -1,11 +1,11 @@
-﻿using NotificationService.Contracts;
-using NotificationService.Data.RabbitMQ.Connection;
+﻿using NotificationSystem.Contracts;
+using NotificationSystem.Data.RabbitMQ.Connection;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
 using System.Text.Json;
 
-namespace NotificationService.Services
+namespace NotificationSystem.Services
 {
     public class RabbitMqListener : BackgroundService
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using NotificationService.Models;
+using NotificationSystem.Models;
 
-namespace NotificationService.Data
+namespace NotificationSystem.Data
 {
     public class ApplicationContext : IdentityDbContext<User>
     {

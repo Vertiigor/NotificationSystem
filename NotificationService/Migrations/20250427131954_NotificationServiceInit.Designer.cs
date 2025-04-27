@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using NotificationService.Data;
+using NotificationSystem.Data;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace NotificationService.Migrations
+namespace NotificationSystem.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
     [Migration("20250427131954_NotificationServiceInit")]
