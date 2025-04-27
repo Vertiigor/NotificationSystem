@@ -25,7 +25,7 @@ namespace SubscriptionService.Controllers
             {
                 return NotFound("No channels found.");
             }
-            
+
             return Ok(channels);
         }
 
@@ -38,7 +38,7 @@ namespace SubscriptionService.Controllers
             {
                 return NotFound($"Channel with ID {id} not found.");
             }
-            
+
             return Ok(channel);
         }
 
@@ -72,18 +72,18 @@ namespace SubscriptionService.Controllers
             }
 
             var channel = await _channelService.GetByIdAsync(id);
-            
+
             if (channel == null)
             {
                 return NotFound($"Channel with ID {id} not found.");
             }
-            
+
             channel.Name = dto.Name;
             channel.Description = dto.Description;
             channel.UpdatedAt = DateTime.UtcNow;
-            
+
             await _channelService.UpdateAsync(channel);
-            
+
             return NoContent();
         }
 

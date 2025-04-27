@@ -4,9 +4,9 @@ using SubscriptionService.Producers.Abstractions;
 using System.Text;
 using System.Text.Json;
 
-namespace SubscriptionService.Producers.Implementations
+namespace PostService.Producers.Abstractions
 {
-    public class Producer : IMessageProducer
+    public class Producer<T> : IMessageProducer<T> where T : class
     {
         private readonly IRabbitMqConnection _connection;
 
@@ -15,7 +15,7 @@ namespace SubscriptionService.Producers.Implementations
             _connection = connection;
         }
 
-        public async Task PublishMessageAsync<T>(
+        public async Task PublishMessageAsync(
             T message,
             string queue,
             bool durable = false,

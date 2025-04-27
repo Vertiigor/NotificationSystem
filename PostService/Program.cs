@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
+using PostService.Producers.Abstractions;
+using PostService.Producers.Implementations;
 using SubscriptionService.Data;
 using SubscriptionService.Data.RabbitMQ.Connection;
 using SubscriptionService.Extensions;
 using SubscriptionService.Producers.Abstractions;
-using SubscriptionService.Producers.Implementations;
 using SubscriptionService.Repository.Abstractions;
 using SubscriptionService.Repository.Implementations;
 using SubscriptionService.Services.Abstractions;
-using SubscriptionService.Services.Implementations;
 
 namespace SubscriptionService;
 
@@ -31,9 +31,13 @@ public class Program
 
         // Register RabbitMQ connection
         builder.Services.AddSingleton<IRabbitMqConnection, RabbitMqConnection>();
-        builder.Services.AddTransient<IMessageProducer, Producer>();
+
+        // Register producers
+        builder.Services.AddTransient<IPostCreatedProducer, PostCreatedProducer>();
+        builder.Services.AddTransient<IPostDeletedProducer, PostDeletedProducer>();
 
         builder.Services.AddControllers();
+
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
@@ -45,7 +49,7 @@ public class Program
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
-            app.MapOpenApi();
+            app.UseSwagger();
             app.UseSwaggerUI();
             app.ApplyMigrations();
         }
