@@ -1,8 +1,8 @@
-﻿using SubscriptionService.Data;
-using SubscriptionService.Models;
-using SubscriptionService.Repository.Abstractions;
+﻿using PostService.Data;
+using PostService.Models;
+using PostService.Repository.Abstractions;
 
-namespace SubscriptionService.Repository.Implementations
+namespace PostService.Repository.Implementations
 {
     public class PostRepository : Repository<Post>, IPostRepository
     {

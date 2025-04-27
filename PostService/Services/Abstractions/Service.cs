@@ -1,6 +1,6 @@
-﻿using SubscriptionService.Repository.Abstractions;
+﻿using PostService.Repository.Abstractions;
 
-namespace SubscriptionService.Services.Abstractions
+namespace PostService.Services.Abstractions
 {
     public abstract class Service<T> : IService<T> where T : class
     {

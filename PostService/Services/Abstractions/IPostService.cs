@@ -1,9 +1,10 @@
-﻿using SubscriptionService.Models;
+﻿using PostService.Contracts;
+using PostService.Models;
 
-namespace SubscriptionService.Services.Abstractions
+namespace PostService.Services.Abstractions
 {
     public interface IPostService : IService<Post>
     {
-        public Task Publish(Post post);
+        public Task Publish<T>(string eventType, T payload);
     }
 }

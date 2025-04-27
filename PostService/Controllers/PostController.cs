@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PostService.Contracts;
 using PostService.Dto;
-using SubscriptionService.Models;
-using SubscriptionService.Services.Abstractions;
+using PostService.Models;
+using PostService.Services.Abstractions;
 
 namespace PostService.Controllers
 {
@@ -26,6 +27,7 @@ namespace PostService.Controllers
 
             var post = new Post
             {
+                Id = Guid.NewGuid().ToString(),
                 UserId = postDto.UserId,
                 ChannelId = postDto.ChannelId,
                 Title = postDto.Title,
@@ -34,8 +36,17 @@ namespace PostService.Controllers
                 UpdatedAt = DateTime.UtcNow
             };
 
+            // Publish the post creation event
+            var postCreatedEvent = new PostCreatedEvent
+            {
+                PostId = post.Id,
+                Title = post.Title,
+                ChannelId = postDto.ChannelId,
+                CreatedAt = DateTime.UtcNow
+            };
+
             await _postService.AddAsync(post);
-            await _postService.Publish(post);
+            await _postService.Publish("PostCreated", postCreatedEvent);
 
             return CreatedAtAction(nameof(CreatePost), new { id = post.Id }, post);
         }
@@ -46,6 +57,29 @@ namespace PostService.Controllers
             var posts = await _postService.GetAllAsync();
 
             return Ok(posts);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePost(string id)
+        {
+            var post = await _postService.GetByIdAsync(id);
+            
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            // Publish the post deletion event
+            var postDeletedEvent = new PostDeletedEvent
+            {
+                PostId = post.Id,
+                DeletedAt = DateTime.UtcNow
+            };
+
+            await _postService.DeleteAsync(id);
+            await _postService.Publish("PostDeleted", postDeletedEvent);
+            
+            return NoContent();
         }
     }
 }

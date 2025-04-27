@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using SubscriptionService.Data;
+using PostService.Data;
 
 #nullable disable
 
-namespace SubscriptionService.Migrations
+namespace PostService.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20250426141920_PostServiceInit")]
+    [Migration("20250427111028_PostServiceInit")]
     partial class PostServiceInit
     {
         /// <inheritdoc />
@@ -25,13 +25,10 @@ namespace SubscriptionService.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("SubscriptionService.Models.Post", b =>
+            modelBuilder.Entity("PostService.Models.Post", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("text");
 
                     b.Property<string>("ChannelId")
                         .IsRequired()

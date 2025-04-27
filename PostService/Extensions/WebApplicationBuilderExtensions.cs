@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SubscriptionService.Data;
+using PostService.Data;
 
-namespace SubscriptionService.Extensions
+namespace PostService.Extensions
 {
     public static class WebApplicationBuilderExtensions
     {

@@ -1,8 +1,8 @@
-﻿using SubscriptionService.Models;
-using SubscriptionService.Repository.Abstractions;
-using SubscriptionService.Services.Abstractions;
+﻿using PostService.Models;
+using PostService.Repository.Abstractions;
+using PostService.Services.Abstractions;
 
-namespace SubscriptionService.Services.Implementations
+namespace PostService.Services.Implementations
 {
     public class UserService : Service<User>, IUserService
     {

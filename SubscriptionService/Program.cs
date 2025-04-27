@@ -1,14 +1,14 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SubscriptionService.Data;
-using SubscriptionService.Extensions;
-using SubscriptionService.Models;
-using SubscriptionService.Repository.Abstractions;
-using SubscriptionService.Repository.Implementations;
-using SubscriptionService.Services.Abstractions;
-using SubscriptionService.Services.Implementations;
+using PostService.Data;
+using PostService.Extensions;
+using PostService.Models;
+using PostService.Repository.Abstractions;
+using PostService.Repository.Implementations;
+using PostService.Services.Abstractions;
+using PostService.Services.Implementations;
 
-namespace SubscriptionService;
+namespace PostService;
 
 public class Program
 {

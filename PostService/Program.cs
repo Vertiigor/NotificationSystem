@@ -1,15 +1,14 @@
 using Microsoft.EntityFrameworkCore;
+using PostService.Data;
+using PostService.Data.RabbitMQ.Connection;
+using PostService.Extensions;
 using PostService.Producers.Abstractions;
 using PostService.Producers.Implementations;
-using SubscriptionService.Data;
-using SubscriptionService.Data.RabbitMQ.Connection;
-using SubscriptionService.Extensions;
-using SubscriptionService.Producers.Abstractions;
-using SubscriptionService.Repository.Abstractions;
-using SubscriptionService.Repository.Implementations;
-using SubscriptionService.Services.Abstractions;
+using PostService.Repository.Abstractions;
+using PostService.Repository.Implementations;
+using PostService.Services.Abstractions;
 
-namespace SubscriptionService;
+namespace PostService;
 
 public class Program
 {
@@ -27,14 +26,13 @@ public class Program
         builder.Services.AddScoped<IPostRepository, PostRepository>();
 
         // Register services
-        builder.Services.AddScoped<IPostService, SubscriptionService.Services.Implementations.PostService>();
+        builder.Services.AddScoped<IPostService, PostService.Services.Implementations.PostService>();
 
         // Register RabbitMQ connection
         builder.Services.AddSingleton<IRabbitMqConnection, RabbitMqConnection>();
 
         // Register producers
-        builder.Services.AddTransient<IPostCreatedProducer, PostCreatedProducer>();
-        builder.Services.AddTransient<IPostDeletedProducer, PostDeletedProducer>();
+        builder.Services.AddTransient<IMessageProducer, Producer>();
 
         builder.Services.AddControllers();
 

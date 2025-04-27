@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SubscriptionService.Data;
+using PostService.Data;
 
-namespace SubscriptionService.Repository.Abstractions
+namespace PostService.Repository.Abstractions
 {
     public abstract class Repository<T> : IRepository<T> where T : class
     {

@@ -1,8 +1,10 @@
-﻿namespace SubscriptionService.Producers.Abstractions
+﻿namespace PostService.Producers.Abstractions
 {
-    public interface IMessageProducer<T> where T : class
+    public interface IMessageProducer
     {
-        public Task PublishMessageAsync(T message,
+        public Task PublishMessageAsync<T>(
+            string eventType,
+            T payload,
             string queue,
             bool durable = false,
             bool exlusive = false,

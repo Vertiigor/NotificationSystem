@@ -1,6 +1,6 @@
-﻿using SubscriptionService.Models;
+﻿using PostService.Models;
 
-namespace SubscriptionService.Repository.Abstractions
+namespace PostService.Repository.Abstractions
 {
     public interface IChannelRepository : IRepository<Channel>
     {

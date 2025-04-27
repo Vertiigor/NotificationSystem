@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SubscriptionService.Models;
+using PostService.Models;
 
-namespace SubscriptionService.Data
+namespace PostService.Data
 {
     public class ApplicationContext : DbContext
     {

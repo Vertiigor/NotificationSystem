@@ -1,9 +1,10 @@
-﻿using SubscriptionService.Models;
-using SubscriptionService.Producers.Abstractions;
-using SubscriptionService.Repository.Abstractions;
-using SubscriptionService.Services.Abstractions;
+﻿using PostService.Contracts;
+using PostService.Models;
+using PostService.Producers.Abstractions;
+using PostService.Repository.Abstractions;
+using PostService.Services.Abstractions;
 
-namespace SubscriptionService.Services.Implementations
+namespace PostService.Services.Implementations
 {
     public class PostService : Service<Post>, IPostService
     {
@@ -16,9 +17,9 @@ namespace SubscriptionService.Services.Implementations
             _messageProducer = messageProducer;
         }
 
-        public async Task Publish(Post post)
+        public Task Publish<T>(string eventType, T payload)
         {
-            await _messageProducer.PublishMessageAsync(post, "posts");
+            return _messageProducer.PublishMessageAsync(eventType, payload, "posts");
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿using SubscriptionService.Models;
+﻿using PostService.Models;
 
-namespace SubscriptionService.Services.Abstractions
+namespace PostService.Services.Abstractions
 {
     public interface IUserService : IService<User>
     {

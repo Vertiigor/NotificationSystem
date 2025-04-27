@@ -32,4 +32,8 @@
     <ProjectReference Include="..\NotificationSystem.ServiceDefaults\NotificationSystem.ServiceDefaults.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\Implementations\" />
+  </ItemGroup>
+
 </Project>

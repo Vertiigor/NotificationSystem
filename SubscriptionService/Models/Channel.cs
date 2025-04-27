@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SubscriptionService.Models
+namespace PostService.Models
 {
     public class Channel
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SubscriptionService.Dto;
-using SubscriptionService.Services.Abstractions;
+using PostService.Dto;
+using PostService.Services.Abstractions;
 
-namespace SubscriptionService.Controllers
+namespace PostService.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

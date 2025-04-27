@@ -1,12 +1,13 @@
-﻿using RabbitMQ.Client;
-using SubscriptionService.Data.RabbitMQ.Connection;
-using SubscriptionService.Producers.Abstractions;
+﻿using PostService.Contracts;
+using PostService.Data.RabbitMQ.Connection;
+using PostService.Producers.Abstractions;
+using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
 
-namespace PostService.Producers.Abstractions
+namespace PostService.Producers.Implementations
 {
-    public class Producer<T> : IMessageProducer<T> where T : class
+    public class Producer : IMessageProducer
     {
         private readonly IRabbitMqConnection _connection;
 
@@ -15,8 +16,9 @@ namespace PostService.Producers.Abstractions
             _connection = connection;
         }
 
-        public async Task PublishMessageAsync(
-            T message,
+        public async Task PublishMessageAsync<T>(
+            string eventType,
+            T payload,
             string queue,
             bool durable = false,
             bool exlusive = false,
@@ -33,7 +35,13 @@ namespace PostService.Producers.Abstractions
                                      autoDelete: autoDelete,
                                      arguments: arguments);
 
-            var json = JsonSerializer.Serialize(message);
+            var envelope = new MessageEnvelope
+            {
+                EventType = eventType,
+                Payload = payload
+            };
+
+            var json = JsonSerializer.Serialize(envelope);
             var body = Encoding.UTF8.GetBytes(json);
 
             await channel.BasicPublishAsync(exchange: exchange,

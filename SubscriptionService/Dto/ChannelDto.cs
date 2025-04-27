@@ -1,4 +1,4 @@
-﻿namespace SubscriptionService.Dto
+﻿namespace PostService.Dto
 {
     public class ChannelDto
     {

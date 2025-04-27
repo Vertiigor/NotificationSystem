@@ -1,4 +1,4 @@
-﻿namespace SubscriptionService.Repository.Abstractions
+﻿namespace PostService.Repository.Abstractions
 {
     public interface IRepository<T> where T : class
     {

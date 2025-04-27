@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace SubscriptionService.Models
+namespace PostService.Models
 {
     public class User : IdentityUser
     {

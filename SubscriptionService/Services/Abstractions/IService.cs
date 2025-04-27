@@ -1,4 +1,4 @@
-﻿namespace SubscriptionService.Services.Abstractions
+﻿namespace PostService.Services.Abstractions
 {
     public interface IService<T> where T : class
     {

@@ -1,6 +1,6 @@
 ﻿using RabbitMQ.Client;
 
-namespace SubscriptionService.Data.RabbitMQ.Connection
+namespace PostService.Data.RabbitMQ.Connection
 {
     public class RabbitMqConnection : IRabbitMqConnection, IDisposable
     {
