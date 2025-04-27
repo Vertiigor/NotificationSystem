@@ -1,18 +1,21 @@
-﻿using NotificationService.Data.RabbitMQ.Connection;
-using NotificationService.Services.Abstractions;
+﻿using NotificationService.Contracts;
+using NotificationService.Data.RabbitMQ.Connection;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
+using System.Text.Json;
 
 namespace NotificationService.Services
 {
     public class RabbitMqListener : BackgroundService
     {
         private readonly IRabbitMqConnection _rabbitMqConnection;
+        private readonly IServiceScopeFactory _serviceScopeFactory;
 
-        public RabbitMqListener(IRabbitMqConnection rabbitMqConnection)
+        public RabbitMqListener(IRabbitMqConnection rabbitMqConnection, IServiceScopeFactory serviceScopeFactory)
         {
             _rabbitMqConnection = rabbitMqConnection;
+            _serviceScopeFactory = serviceScopeFactory;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -39,15 +42,30 @@ namespace NotificationService.Services
 
             var consumer = new AsyncEventingBasicConsumer(channel);
 
+            var eventRouter = _serviceScopeFactory.CreateScope().ServiceProvider.GetRequiredService<EventRouter>();
+
             consumer.ReceivedAsync += async (model, ea) =>
             {
                 var body = ea.Body.ToArray();
                 var message = Encoding.UTF8.GetString(body);
 
-                // Deserialize the message
+                try
+                {
+                    var envelope = JsonSerializer.Deserialize<MessageEnvelope>(message, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
 
-                //Console.WriteLine($"Received message: {message}");
-                // Acknowledge the message
+                    if (envelope != null)
+                    {
+                        await eventRouter.RouteAsync(envelope);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"❌ Error processing message: {ex.Message}");
+                }
+
                 await channel.BasicAckAsync(ea.DeliveryTag, false);
             };
 

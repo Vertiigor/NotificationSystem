@@ -7,6 +7,7 @@ using NotificationService.Repository.Abstractions;
 using NotificationService.Repository.Implementations;
 using NotificationService.Services;
 using NotificationService.Services.Abstractions;
+using NotificationService.Services.EventHandlers;
 using NotificationService.Services.Implementations;
 
 namespace NotificationService;
@@ -34,6 +35,10 @@ public class Program
         // Register services
         builder.Services.AddScoped<IUserService, UserService>();
         builder.Services.AddScoped<IChannelService, ChannelService>();
+
+        builder.Services.AddScoped<PostCreatedHandler>();
+        builder.Services.AddScoped<PostDeletedHandler>();
+        builder.Services.AddScoped<EventRouter>();
 
         builder.Services.AddSingleton<IRabbitMqConnection, RabbitMqConnection>();
 

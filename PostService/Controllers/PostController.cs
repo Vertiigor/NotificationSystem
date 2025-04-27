@@ -73,6 +73,7 @@ namespace NotificationService.Controllers
             var postDeletedEvent = new PostDeletedEvent
             {
                 PostId = post.Id,
+                ChannelId = post.ChannelId,
                 DeletedAt = DateTime.UtcNow
             };
 

@@ -18,6 +18,12 @@ namespace NotificationService.Services.Implementations
         public async Task<IEnumerable<User>> GetUsersSubscribedTo(string channelId)
         {
             var users = await _userRepository.GetAllAsync();
+
+            foreach (var user in users)
+            {
+                user.Subscriptions = (List<Channel>)await _userRepository.GetSubscribedChannelsAsync(user.Id);
+            }
+
             var subscribedUsers = users
                 .Where(user => user.Subscriptions.Any(channel => channel.Id == channelId))
                 .ToList();
