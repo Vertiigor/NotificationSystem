@@ -1,14 +1,14 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using PostService.Data;
-using PostService.Extensions;
-using PostService.Models;
-using PostService.Repository.Abstractions;
-using PostService.Repository.Implementations;
-using PostService.Services.Abstractions;
-using PostService.Services.Implementations;
+using NotificationService.Data;
+using NotificationService.Extensions;
+using NotificationService.Models;
+using NotificationService.Repository.Abstractions;
+using NotificationService.Repository.Implementations;
+using NotificationService.Services.Abstractions;
+using NotificationService.Services.Implementations;
 
-namespace PostService;
+namespace NotificationService;
 
 public class Program
 {

@@ -1,6 +1,6 @@
-﻿using PostService.Models;
+﻿using NotificationService.Models;
 
-namespace PostService.Repository.Abstractions
+namespace NotificationService.Repository.Abstractions
 {
     public interface IPostRepository : IRepository<Post>
     {

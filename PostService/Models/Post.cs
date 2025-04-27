@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PostService.Models
+namespace NotificationService.Models
 {
     public class Post
     {

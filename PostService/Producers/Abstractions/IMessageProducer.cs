@@ -1,4 +1,4 @@
-﻿namespace PostService.Producers.Abstractions
+﻿namespace NotificationService.Producers.Abstractions
 {
     public interface IMessageProducer
     {

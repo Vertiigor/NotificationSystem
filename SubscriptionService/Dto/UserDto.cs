@@ -1,4 +1,4 @@
-﻿namespace PostService.Dto
+﻿namespace NotificationService.Dto
 {
     public class UserDto
     {

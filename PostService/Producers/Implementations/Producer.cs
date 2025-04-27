@@ -1,11 +1,11 @@
-﻿using PostService.Contracts;
-using PostService.Data.RabbitMQ.Connection;
-using PostService.Producers.Abstractions;
+﻿using NotificationService.Contracts;
+using NotificationService.Data.RabbitMQ.Connection;
+using NotificationService.Producers.Abstractions;
 using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
 
-namespace PostService.Producers.Implementations
+namespace NotificationService.Producers.Implementations
 {
     public class Producer : IMessageProducer
     {

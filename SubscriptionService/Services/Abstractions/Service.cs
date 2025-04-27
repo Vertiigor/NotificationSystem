@@ -1,6 +1,6 @@
-﻿using PostService.Repository.Abstractions;
+﻿using NotificationService.Repository.Abstractions;
 
-namespace PostService.Services.Abstractions
+namespace NotificationService.Services.Abstractions
 {
     public abstract class Service<T> : IService<T> where T : class
     {

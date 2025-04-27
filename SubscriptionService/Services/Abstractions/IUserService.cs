@@ -1,6 +1,6 @@
-﻿using PostService.Models;
+﻿using NotificationService.Models;
 
-namespace PostService.Services.Abstractions
+namespace NotificationService.Services.Abstractions
 {
     public interface IUserService : IService<User>
     {

@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PostService.Contracts;
-using PostService.Dto;
-using PostService.Models;
-using PostService.Services.Abstractions;
+using NotificationService.Contracts;
+using NotificationService.Dto;
+using NotificationService.Models;
+using NotificationService.Services.Abstractions;
 
-namespace PostService.Controllers
+namespace NotificationService.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -63,7 +63,7 @@ namespace PostService.Controllers
         public async Task<IActionResult> DeletePost(string id)
         {
             var post = await _postService.GetByIdAsync(id);
-            
+
             if (post == null)
             {
                 return NotFound();
@@ -78,7 +78,7 @@ namespace PostService.Controllers
 
             await _postService.DeleteAsync(id);
             await _postService.Publish("PostDeleted", postDeletedEvent);
-            
+
             return NoContent();
         }
     }

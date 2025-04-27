@@ -1,4 +1,4 @@
-﻿namespace PostService.Contracts
+﻿namespace NotificationService.Contracts
 {
     public class PostDeletedEvent
     {

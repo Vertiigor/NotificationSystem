@@ -1,7 +1,6 @@
-﻿using PostService.Contracts;
-using PostService.Models;
+﻿using NotificationService.Models;
 
-namespace PostService.Services.Abstractions
+namespace NotificationService.Services.Abstractions
 {
     public interface IPostService : IService<Post>
     {

@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PostService.Dto;
-using PostService.Models;
-using PostService.Services.Abstractions;
+using NotificationService.Dto;
+using NotificationService.Models;
+using NotificationService.Services.Abstractions;
 
-namespace PostService.Controllers
+namespace NotificationService.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

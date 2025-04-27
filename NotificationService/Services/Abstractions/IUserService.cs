@@ -1,9 +1,10 @@
 ﻿using NotificationService.Models;
 
-namespace NotificationService.Repository.Abstractions
+namespace NotificationService.Services.Abstractions
 {
-    public interface IUserRepository : IRepository<User>
+    public interface IUserService : IService<User>
     {
         public Task<IEnumerable<Channel>> GetSubscribedChannelsAsync(string userId);
     }
+
 }

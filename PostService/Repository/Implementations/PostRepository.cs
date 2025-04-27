@@ -1,8 +1,8 @@
-﻿using PostService.Data;
-using PostService.Models;
-using PostService.Repository.Abstractions;
+﻿using NotificationService.Data;
+using NotificationService.Models;
+using NotificationService.Repository.Abstractions;
 
-namespace PostService.Repository.Implementations
+namespace NotificationService.Repository.Implementations
 {
     public class PostRepository : Repository<Post>, IPostRepository
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PostService.Models;
+using NotificationService.Models;
 
-namespace PostService.Data
+namespace NotificationService.Data
 {
     public class ApplicationContext : DbContext
     {

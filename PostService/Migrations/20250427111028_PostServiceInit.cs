@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace PostService.Migrations
+namespace NotificationService.Migrations
 {
     /// <inheritdoc />
     public partial class PostServiceInit : Migration

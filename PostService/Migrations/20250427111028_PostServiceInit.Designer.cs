@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using PostService.Data;
+using NotificationService.Data;
 
 #nullable disable
 
-namespace PostService.Migrations
+namespace NotificationService.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
     [Migration("20250427111028_PostServiceInit")]

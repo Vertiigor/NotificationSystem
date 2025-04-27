@@ -2,21 +2,18 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using NotificationService.Data;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
 namespace NotificationService.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20250426142602_SubscriptionServiceInit")]
-    partial class SubscriptionServiceInit
+    partial class ApplicationContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -172,7 +169,7 @@ namespace NotificationService.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("PostService.Models.Channel", b =>
+            modelBuilder.Entity("NotificationService.Models.Channel", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("text");
@@ -196,7 +193,7 @@ namespace NotificationService.Migrations
                     b.ToTable("Channels");
                 });
 
-            modelBuilder.Entity("PostService.Models.User", b =>
+            modelBuilder.Entity("NotificationService.Models.User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("text");
@@ -262,13 +259,13 @@ namespace NotificationService.Migrations
 
             modelBuilder.Entity("ChannelUser", b =>
                 {
-                    b.HasOne("PostService.Models.Channel", null)
+                    b.HasOne("NotificationService.Models.Channel", null)
                         .WithMany()
                         .HasForeignKey("SubscriptionsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PostService.Models.User", null)
+                    b.HasOne("NotificationService.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -286,7 +283,7 @@ namespace NotificationService.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("PostService.Models.User", null)
+                    b.HasOne("NotificationService.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -295,7 +292,7 @@ namespace NotificationService.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("PostService.Models.User", null)
+                    b.HasOne("NotificationService.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -310,7 +307,7 @@ namespace NotificationService.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PostService.Models.User", null)
+                    b.HasOne("NotificationService.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -319,7 +316,7 @@ namespace NotificationService.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("PostService.Models.User", null)
+                    b.HasOne("NotificationService.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

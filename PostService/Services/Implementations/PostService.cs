@@ -1,10 +1,9 @@
-﻿using PostService.Contracts;
-using PostService.Models;
-using PostService.Producers.Abstractions;
-using PostService.Repository.Abstractions;
-using PostService.Services.Abstractions;
+﻿using NotificationService.Models;
+using NotificationService.Producers.Abstractions;
+using NotificationService.Repository.Abstractions;
+using NotificationService.Services.Abstractions;
 
-namespace PostService.Services.Implementations
+namespace NotificationService.Services.Implementations
 {
     public class PostService : Service<Post>, IPostService
     {
