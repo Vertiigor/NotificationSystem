@@ -3,13 +3,14 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 
 # Copy only csproj
-COPY ./NotificationService.csproj ./ 
+# COPY ./NotificationService.csproj ./ 
+COPY . .
 
 # Restore dependencies
 RUN dotnet restore "./NotificationService.csproj"
 
 # Copy the rest of the app
-COPY . .
+# COPY . .
 
 # Set working directory to the app folder (where Program.cs is)
 WORKDIR /src

@@ -7,13 +7,14 @@ RUN dotnet tool install --global dotnet-ef
 ENV PATH="${PATH}:/root/.dotnet/tools"
 
 # Copy only csproj
-COPY ./PostService.csproj ./ 
+# COPY ./PostService.csproj ./ 
+COPY . .
 
 # Restore dependencies
 RUN dotnet restore "./PostService.csproj"
 
 # Copy the rest of the app
-COPY . .
+# COPY . .
 
 # Set working directory to the app folder (where Program.cs is)
 WORKDIR /src

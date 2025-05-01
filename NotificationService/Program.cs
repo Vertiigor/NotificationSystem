@@ -26,8 +26,6 @@ public class Program
             .AddEntityFrameworkStores<ApplicationContext>()
             .AddDefaultTokenProviders();
 
-        builder.AddServiceDefaults();
-
         // Register repositories
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<IChannelRepository, ChannelRepository>();
@@ -52,8 +50,6 @@ public class Program
         builder.Services.AddOpenApi();
 
         var app = builder.Build();
-
-        app.MapDefaultEndpoints();
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())

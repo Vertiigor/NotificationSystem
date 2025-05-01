@@ -20,8 +20,6 @@ public class Program
         builder.Services.AddDbContext<ApplicationContext>(options =>
               options.UseNpgsql(builder.Configuration.GetConnectionString("DatabaseContext") ?? throw new InvalidOperationException("Connection string 'BookStoreContext' not found.")));
 
-        builder.AddServiceDefaults();
-
         // Register repositories
         builder.Services.AddScoped<IPostRepository, PostRepository>();
 
@@ -41,8 +39,6 @@ public class Program
         builder.Services.AddSwaggerGen();
 
         var app = builder.Build();
-
-        app.MapDefaultEndpoints();
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
