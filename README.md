@@ -66,12 +66,14 @@ docker-compose up --build
 ✅ This will start:
 - RabbitMQ server
 - PostgreSQL database
+- PostService app (API with Swagger)
+- SubscriptionService app (API with Swagger)
 - NotificationService app
 
 You can access:
 - RabbitMQ Management UI: [http://localhost:15672](http://localhost:15672) (default user: `guest` / password: `guest`)
-- ASP.NET Core app (PostService): [http://localhost:5001](http://localhost:5001)
-- ASP.NET Core app (SubscriptionService): [http://localhost:5003](http://localhost:5003)
+- ASP.NET Core app (PostService): [http://localhost:5001](http://localhost:5001/swagger/index.html)
+- ASP.NET Core app (SubscriptionService): [http://localhost:5003](http://localhost:5003/swagger/index.html)
 - NotificationService logs:
   ```bash
   docker logs <container-index>
