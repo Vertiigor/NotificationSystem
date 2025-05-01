@@ -70,7 +70,12 @@ docker-compose up --build
 
 You can access:
 - RabbitMQ Management UI: [http://localhost:15672](http://localhost:15672) (default user: `guest` / password: `guest`)
-- ASP.NET Core app (NotificationService): [http://localhost:5000](http://localhost:5000)
+- ASP.NET Core app (PostService): [http://localhost:5001](http://localhost:5001)
+- ASP.NET Core app (SubscriptionService): [http://localhost:5003](http://localhost:5003)
+- NotificationService logs:
+  ```bash
+  docker logs <container-index>
+  ```
 
 ---
 
